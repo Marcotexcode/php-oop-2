@@ -9,21 +9,22 @@
         
         public $nome;
         public $congome;
-        public $scontoPrime = 'nessuno sconto';
+        public $scontoPrime = 'Non hai la tessera prime';
 
 
-        function __construct($_nome,$_cognome) {
+        function __construct($_nome, $_cognome) {
 
             $this->nome = $_nome;
             $this->cognome = $_cognome;
 
         }
 
+        
         public function setScontoPrime($prime) {
 
             if($prime == true) {
 
-                $this->scontoPrime = $this->prezzo - 0.1 . ' ' . '€' ;
+                $this->scontoPrime = $this->sconto - 0.2 . ' ' . '€' ;
 
             }
 

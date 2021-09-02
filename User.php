@@ -17,7 +17,7 @@ BONUS: Gestite eventuali eccezioni che si possono verificare (es: carta di credi
 
         public $nome;
         public $prezzo;
-        public $sconto = 'nessuno sconto';
+        public $sconto = 0;
 
 
         function __construct($_nome, $_prezzo) {
@@ -42,7 +42,6 @@ BONUS: Gestite eventuali eccezioni che si possono verificare (es: carta di credi
             return $this->sconto ;
 
         }
-
 
     }
     
