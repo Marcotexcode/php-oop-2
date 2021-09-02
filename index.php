@@ -4,12 +4,21 @@
     require_once 'Employee.php';
 
 
+    // PRODOTTI
+    $latte = new User('Parmalat', 5 . ' ' . '€');
+    $latte->setSconto(0.2);
 
-    $latte = new User('Parmalat', 2 . ' ' . '€');
-    $latte->setSconto(1);
+    $pasta = new User('Barilla', 3 . ' ' . '€');
 
 
-    $pasta = new User('Barilla', 1 . ' ' . '€');
+    // UTENTI
+    $utente1 = new Employee('Marco', 'Rossi');
+    $utente1->setScontoPrime(true);
+
+    $utente2 = new Employee('Mario', 'Verdi');
+    $utente2->setScontoPrime(false);
+    
+
 
 
 
@@ -27,13 +36,13 @@
 </head>
 <body>
 
-    <h1>Prodotti</h1>
+    <h1>PRODOTTI</h1>
 
     <ul>
 
         <li>Nome: <?php echo $latte->nome ?></li>
         <li>Prezzo: <?php echo $latte->prezzo ?></li>
-        <li>Scontato: <?php echo $latte->sconto ?></li>
+        <li>Scontato: <?php echo $latte->sconto ?> </li>
 
     </ul>
 
@@ -41,10 +50,35 @@
 
         <li>Nome: <?php echo $pasta->nome ?></li>
         <li>Prezzo: <?php echo $pasta->prezzo ?></li>
-        <li>Scontato: <?php echo $latte->sconto ?></li>
+        <li>Scontato: <?php echo $pasta->sconto ?> </li>
 
     </ul>
 
+    <h2>UTENTI</h2>
+
+    <ul>
+
+        <li>Nome: <?php echo $utente1->nome ?></li>
+        <li>Prezzo: <?php echo $utente1->cognome ?></li>
+        <ul>
+            <li>Prezzo prime <?php echo $latte->nome ?>: <?php echo $utente1->scontoPrime ?></li>
+            <li>Prezzo prime <?php echo $pasta->nome ?>: <?php echo $utente1->scontoPrime ?></li>
+
+        </ul>
+
+    </ul>
+
+    <ul>
+
+        <li>Nome: <?php echo $utente1->nome ?></li>
+        <li>Prezzo: <?php echo $utente1->cognome ?></li>
+        <ul>
+            <li>Prezzo prime <?php echo $latte->nome ?>: <?php echo $utente2->scontoPrime ?></li>
+            <li>Prezzo prime <?php echo $pasta->nome ?>: <?php echo $utente2->scontoPrime ?></li>
+
+        </ul>
+
+    </ul>
     
 
 </body>

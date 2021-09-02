@@ -17,13 +17,29 @@ BONUS: Gestite eventuali eccezioni che si possono verificare (es: carta di credi
 
         public $nome;
         public $prezzo;
-        public $sconto = 'Nessuno sconto';
+        public $sconto = 'nessuno sconto';
 
 
         function __construct($_nome, $_prezzo) {
 
             $this->nome = $_nome;
-            $this->prezzo = $_prezzo;
+            $this->prezzo = (int)$_prezzo;
+
+        }
+
+        public function setSconto($scontare) {
+
+            if($scontare > 0) {
+
+                $this->sconto = $this->prezzo - $scontare . ' ' . '€' ;
+
+            }
+
+        }
+
+        public function getStudente($scontare) {
+
+            return $this->sconto ;
 
         }
 

@@ -1,25 +1,37 @@
 <?php
 
-    // Classe sconti (figlio)
+    // Classe utenti (figlio)
 
     require_once 'User.php';
 
     class Employee extends User {
 
+        
+        public $nome;
+        public $congome;
+        public $scontoPrime = 'nessuno sconto';
 
-        public function setSconto($scontare) {
 
-            if($scontare > 0) {
+        function __construct($_nome,$_cognome) {
 
-                $this->sconto = $this->prezzo - $scontare ;
+            $this->nome = $_nome;
+            $this->cognome = $_cognome;
+
+        }
+
+        public function setScontoPrime($prime) {
+
+            if($prime == true) {
+
+                $this->scontoPrime = $this->prezzo - 0.1 . ' ' . '€' ;
 
             }
 
         }
 
-        public function getStudente($scontare) {
+        public function getStudentePrime($prime) {
 
-            return $this->sconto;
+            return $this->scontoPrime;
 
         }
 
