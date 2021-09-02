@@ -1,24 +1,24 @@
 <?php
 
-    require_once 'User.php';
-    require_once 'Employee.php';
+    require_once 'Prodotti.php';
+    require_once 'ScontoProdotti.php';
 
 
     // PRODOTTI
-    $latte = new User('Parmalat', 5);
-    $latte->setSconto(0.2);
+    $latte = new Prodotti('Parmalat', 6);
+    $prezzoLatte = $latte->prezzo;
+    $scontato = new ScontoProdotti('nome', $prezzoLatte, 0);
+    $scontato->setSconto(2);
 
-    $pasta = new User('Barilla', 6);
+
+    $pasta = new Prodotti('Barilla', 6);
 
 
-    // UTENTI
-    $utente1 = new Employee('Marco', 'Rossi');
-    $utente1->setScontoPrime(true);
+    $patatine = new Prodotti('San carlo', 3);
+    $prezzoPatatine = $patatine->prezzo;
+    $scontato2 = new ScontoProdotti('nome', $prezzoPatatine, 0);
 
-    $utente2 = new Employee('Mario', 'Verdi');
-    $utente2->setScontoPrime(false);
     
-
 ?>
 
 
@@ -38,7 +38,7 @@
 
         <li>Nome: <?php echo $latte->nome ?></li>
         <li>Prezzo: <?php echo $latte->prezzo ?> €</li>
-        <li>Scontato: <?php echo $latte->sconto ?> </li>
+        <li>Scontato: <?php echo $scontato->sconto ?> €</li>
 
     </ul>
 
@@ -46,38 +46,44 @@
 
         <li>Nome: <?php echo $pasta->nome ?></li>
         <li>Prezzo: <?php echo $pasta->prezzo ?> €</li>
-        <li>Scontato: <?php echo $pasta->sconto ?> </li>
-
-    </ul>
-
-    <h2>UTENTI</h2>
-
-    <ul>
-
-        <li>Nome: <?php echo $utente1->nome ?></li>
-        <li>Prezzo: <?php echo $utente1->cognome ?></li>
-        <ul>
-
-            <li>Prezzo prime <?php echo $latte->nome ?>: <?php echo $utente1->scontoPrime ?>.</li>
-            <li>Prezzo prime <?php echo $pasta->nome ?>: <?php echo $utente1->scontoPrime ?>.</li>
-
-        </ul>
+        <li>Scontato:  €</li>
 
     </ul>
 
     <ul>
 
-        <li>Nome: <?php echo $utente1->nome ?></li>
-        <li>Prezzo: <?php echo $utente1->cognome ?></li>
-        <ul>
-
-            <li>Prezzo prime <?php echo $latte->nome ?>: <?php echo $utente2->scontoPrime ?>.</li>
-            <li>Prezzo prime <?php echo $pasta->nome ?>: <?php echo $utente2->scontoPrime ?>.</li>
-
-        </ul>
+        <li>Nome: <?php echo $patatine->nome ?></li>
+        <li>Prezzo: <?php echo $patatine->prezzo ?> €</li>
+        <li>Scontato: <?php echo $scontato2->sconto ?> €</li>
 
     </ul>
-    
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

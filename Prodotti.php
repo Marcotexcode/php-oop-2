@@ -13,11 +13,10 @@ BONUS: Gestite eventuali eccezioni che si possono verificare (es: carta di credi
 <?php
 
     // Classe Prodotti (genitore)
-    class User {
+    class Prodotti {
 
         public $nome;
         public $prezzo;
-        public $sconto = 0;
 
 
         function __construct($_nome, $_prezzo) {
@@ -27,21 +26,72 @@ BONUS: Gestite eventuali eccezioni che si possono verificare (es: carta di credi
 
         }
 
-        public function setSconto($scontare) {
-
-            if($scontare > 0) {
-
-                $this->sconto = $this->prezzo - $scontare . ' ' . '€' ;
-
-            }
-
-        }
-
-        public function getStudente($scontare) {
-
-            return $this->sconto ;
-
-        }
-
+        
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
