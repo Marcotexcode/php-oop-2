@@ -17,8 +17,16 @@ BONUS: Gestite eventuali eccezioni che si possono verificare (es: carta di credi
 
         public $nome;
         public $prezzo;
-        public $descrizione;
-        public $sconto = 0;
+        public $sconto = 'Nessuno sconto';
+
+
+        function __construct($_nome, $_prezzo) {
+
+            $this->nome = $_nome;
+            $this->prezzo = $_prezzo;
+
+        }
+
 
     }
     
